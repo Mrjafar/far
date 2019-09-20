@@ -1,0 +1,47 @@
+#!/bin/sh
+
+#perulangan
+ulang='y'
+while [ $ulang = 'y' ];
+do
+  #menu utama
+  echo '1) inntall bahan bahan'
+  echo '2) masuk ke menu tools'
+  echo '0) exit'
+  #masukan atau input
+  read -p 'Masukkan Pilhan anda : ' pil; 
+  #kondisi jika input = 1 maka akan menginstall bahan bahan
+  if [ $pil = '1' ]
+  then
+  install
+      echo 'installing apt update && apt upgrade -y'
+      cd $HOME
+      echo apt install php -y
+      echo apt install git
+      echo apt install figlet -y
+      echo apt install cowsay -y
+      echo apt inatall ruby -y
+      echo 'installing succes....! '
+      sleep 1
+  #kondisi jika input = 2 maka akan masuk ke menu tools
+  elif [ $pil = '2' ];
+  then
+     echo 'ls'
+     cd $HOME
+     echo 'cd Mr_J4F4R'
+     echo 'sh J4F4R.sh'
+     sleep 2
+
+  #kondisi jika input = 0 maka akan keluar dari tools
+  elif [ $pil = '0' ];
+  then
+      echo 'bye bye.....! '
+      sleep 2
+      exit
+  #kodisi else
+  else
+      echo 'ERROR : Wrong Input....! '
+      sleep 1
+      echo $ulang
+  fi
+done
